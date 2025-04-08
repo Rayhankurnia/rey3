@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilihan Liburan Romantis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mau Liburan Kemana, Sayang? ❤️</h1>
+        
+        <!-- Welcome Modal -->
+        <div id="welcomeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Selamat Datang!</h2>
+                <p>Yuk rencanakan liburan romantis kita bersama ❤️</p>
+                <button id="startBtn">Mulai Sekarang</button>
+            </div>
+        </div>
+
+        <!-- Main Options -->
+        <div class="options hidden" id="mainOptions">
+            <div class="option" id="ikn">
+                <img src="https://via.placeholder.com/300x200?text=IKN+Nusantara" alt="IKN">
+                <h2>IKN Nusantara</h2>
+                <p>Eksplor ibukota baru dengan pemandangan modern</p>
+                <button class="details-btn">Lihat Detail</button>
+            </div>
+            <div class="option" id="beach">
+                <img src="https://via.placeholder.com/300x200?text=Pantai+Romantis" alt="Pantai">
+                <h2>Pantai Romantis</h2>
+                <p>Nikmati sunset berdua di tepi pantai</p>
+                <button class="details-btn">Lihat Detail</button>
+            </div>
+        </div>
+
+        <!-- Detail Modals -->
+        <div id="iknModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>IKN Nusantara</h2>
+                <div class="modal-images">
+                    <img src="https://via.placeholder.com/200x150?text=IKN+1" alt="IKN 1">
+                    <img src="https://via.placeholder.com/200x150?text=IKN+2" alt="IKN 2">
+                </div>
+                <p>Nikmati pemandangan kota modern dengan fasilitas terbaik</p>
+                <button class="choose-btn" data-dest="IKN Nusantara">Pilih Destinasi Ini</button>
+            </div>
+        </div>
+
+        <div id="beachModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Pantai Romantis</h2>
+                <div class="modal-images">
+                    <img src="https://via.placeholder.com/200x150?text=Pantai+1" alt="Pantai 1">
+                    <img src="https://via.placeholder.com/200x150?text=Pantai+2" alt="Pantai 2">
+                </div>
+                <p>Nikmati sunset romantis di tepi pantai dengan pasir putih</p>
+                <button class="choose-btn" data-dest="Pantai Romantis">Pilih Destinasi Ini</button>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <form id="vacationForm" class="hidden">
+            <div class="form-step active" id="step1">
+                <h2>Data Diri</h2>
+                <div class="form-group">
+                    <label for="name">Nama Kamu:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <button type="button" class="next-btn">Lanjut</button>
+            </div>
+
+            <div class="form-step hidden" id="step2">
+                <h2>Detail Liburan</h2>
+                <div class="form-group">
+                    <label for="date">Tanggal Liburan:</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Durasi (hari):</label>
+                    <input type="number" id="duration" min="1" max="14" value="3" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="prev-btn">Kembali</button>
+                    <button type="button" class="next-btn">Lanjut</button>
+                </div>
+            </div>
+
+            <div class="form-step hidden" id="step3">
+                <h2>Pesan Khusus</h2>
+                <div class="form-group">
+                    <label for="message">Permintaan khusus:</label>
+                    <textarea id="message"></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="prev-btn">Kembali</button>
+                    <button type="submit">Konfirmasi Liburan</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Thank You Section -->
+        <div id="thankYou" class="hidden">
+            <div class="confetti"></div>
+            <h2>Terima Kasih, <span id="userName"></span>! ❤️</h2>
+            <div class="summary">
+                <p>Kami sudah menerima pilihan liburan kamu:</p>
+                <ul>
+                    <li>Destinasi: <span id="destination"></span></li>
+                    <li>Tanggal: <span id="vacationDate"></span></li>
+                    <li>Durasi: <span id="durationDays"></span> hari</li>
+                </ul>
+            </div>
+            <p class="special-message">Siap-siap untuk petualangan romantis kita!</p>
+            <button id="restartBtn">Rencanakan Liburan Lain</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
